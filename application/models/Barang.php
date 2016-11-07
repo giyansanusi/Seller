@@ -52,9 +52,15 @@ class Barang extends CI_Model {
 		return $query;
 	}
 
-    // Ngitung jumlah row barang
-    public function recordCount() {
+    // Ngitung jumlah row barang buat seluruh barang yang ada
+    public function recordCountForAllBarang() {
        return $this->db->count_all("barang");
+    }
+
+    // Ngitung jumlah row barang buat seluruh barang yang ada
+    public function recordCountForSearchResult($nama) {
+       $query = $this->db->query("SELECT * FROM barang where NAMABARANG LIKE '%$nama%'");
+       return $query->num_rows();
     }
 
     // Ngambil data barang per limit (buat pagination)
@@ -63,5 +69,16 @@ class Barang extends CI_Model {
             $query = $this->db->get('barang');
             return $query->result_array();
     }
+
+    //cari artikel dan di page nya ada pagination
+    public function cariDataBarangWithLimit($nama, $limit, $offset)
+    {
+        $this->db->select('*');
+        $this->db->from('barang');
+        $this->db->like('NAMABARANG', $nama);
+        $this->db->limit($limit, $offset);
+        $query = $this->db->get();
+        return $query->result_array();
+        }
 }
 

@@ -21,11 +21,26 @@ class C_item extends CI_Controller {
 
 		$config = array();
 		$config["base_url"] = base_url() . "index.php/admin/c_item/tampilkanDaftarBarang";
-		$total_row = $this->Barang->recordCount();
+		$total_row = $this->Barang->recordCountForAllBarang();
 		$config["total_rows"] = $total_row;
 		$config["per_page"] = 3;
 		$config['next_link'] = 'Next';
 		$config['prev_link'] = 'Previous';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+		$config['full_tag_close'] = '</ul>';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+ 		$config['num_tag_close'] = '</li>';
+
+		//contoh bikin pagination ke sini aja bang
+		// http://www.w3programmers.com/making-simple-pagination-with-codeigniter-framework-and-bootstrap/
+
+
 
 		$this->pagination->initialize($config);
 		if($this->uri->segment(4)){
@@ -45,6 +60,7 @@ class C_item extends CI_Controller {
 		$str_links = $this->pagination->create_links();
 		$data["links"] = explode('&nbsp;',$str_links );
 		$data['page'] = $page +1;
+		$data['section'] = 'viewall';
 		$this->load->view('admin/v_template',$data);
 
 	}
@@ -160,7 +176,10 @@ class C_item extends CI_Controller {
         $nama=$this->input->post('search');
 		$data['listBarang'] = $this->Barang->cariDataBarang($nama);
 		$data['vcontent'] = 'admin/v_item';
+		$data['section'] = 'search';
         $this->load->view('admin/v_template', $data);
+
+
 	}
 
 	public function hapusBarang()

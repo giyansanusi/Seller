@@ -68,17 +68,21 @@
                         </table>
                       </div>
                   </div>
-                  <div class="widget-foot">
+                  <div class="widget-foot" align="center">
                     <!-- Footer goes here -->
 
-                     <ul class="pagination">
+                    
 
                         <!-- Show pagination links -->
-                        <?php foreach ($links as $link) {
-                        echo "<li>". $link."</li>";
-                        } ?>
+                        <?php 
+                        if ($section == 'viewall') {
+                          foreach ($links as $link) {
+                            echo "<li>". $link."</li>";
+                          }
+                        }
+                        ?>
 
-                    </ul>
+                    
 
                   </div>
                 </div>
