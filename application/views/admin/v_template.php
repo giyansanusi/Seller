@@ -42,20 +42,31 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
+
+    <!-- Style tambahan oleh giyan -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/giyanstyle.css" type="text/css">
+
+
   </head>
 
-  <body>
+  <body onload="myLoader()">
+
+    <div id="loader" class="loaderProperties"></div>
+
   <!-- container section start -->
-  <section id="container" class="">
-     
-      
-      <?php $this->load->view('admin/header'); ?>
+    <section id="container" class="">
+       
+       <div class="animate-bottom">
+        
+        <?php $this->load->view('admin/header'); ?>
 
-      <?php $this->load->view('admin/sidebar'); ?>
-      
-      <?php $this->load->view($vcontent); ?>
+        <?php $this->load->view('admin/sidebar'); ?>
+        
+        <?php $this->load->view($vcontent); ?>
+        
+      </div>
 
-  </section>
+    </section>
   <!-- container section end -->
 
     <!-- javascripts -->
@@ -146,6 +157,19 @@
 
 
 
+  </script>
+
+  <!-- Ini script buat loader -->
+  <script>
+    var myVar;
+
+    function myLoader() {
+        myVar = setTimeout(showPage, 750);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+    }
   </script>
 
   </body>
