@@ -12,65 +12,59 @@ class C_addcarousel extends CI_Controller {
 			header("location: http://localhost/seller/index.php/admin/c_login/");
 		}
         $this->load->helper(array('form', 'url'));
+        $this->load->model('Carousel','',TRUE);
         $this->load->library('form_validation');
         $this->load->library('pagination');
 	}
 
 	public function index()
 	{
+		$data['listGambar'] = $this->Carousel->getAllNamaGambar();
 		$data['vcontent'] = 'admin/v_carousel';
 		$this->load->view('admin/v_template',$data);
 	}
 
 	public function editCarousel()
 	{
+		$idgambar = $this->uri->segment(4);
+		$namagambarold = $this->Carousel->getNamaGambar($idgambar);
+
+		$data['namagambarold'] = $namagambarold[0]['NAMAGAMBAR'];
+		$data['idgambar'] = $idgambar;
 		$data['vcontent'] = 'admin/v_edit_carousel';
 		$this->load->view('admin/v_template',$data);
 	}
 
-	// todo disini bang!!!!!!!!!!!!
 	public function submitItem()
 	{
-		$namabarang=$this->input->post('namabarang');
-    	$hargabarang=$this->input->post('hargabarang');
-    	$deskripsi=$this->input->post('deskripsi');
-    	$beratbarang=$this->input->post('beratbarang');
-    	$kategori=$this->input->post('kategori');
+		$idgambar = $this->uri->segment(4); 
+		$namagambarold = $this->uri->segment(5); 
+		if($namagambarold != ""){
+			unlink("./assets/admin/img/carousel/".$namagambarold);	
+		}
 
-		$this->form_validation->set_rules('namabarang','Nama Barang','required');
-        $this->form_validation->set_rules('hargabarang','Harga Barang','required');
-        $this->form_validation->set_rules('deskripsi','Deskripsi','required');
-        $this->form_validation->set_rules('beratbarang','Berat Barang','required');
-        $this->form_validation->set_rules('kategori','Kategori','required');
+		$config['upload_path']          = './assets/admin/img/carousel/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = 1000;
+		$config['max_width']            = 2024;
+		$config['max_height']           = 1200;
+	 
+		$this->load->library('upload', $config);
+	 
+		if ( ! $this->upload->do_upload('image')){
+			$error = array('error' => $this->upload->display_errors());
+			echo $error['error'];
+			die();
+		}else{
 
+			$gbr = $this->upload->data();
+			$namagambar = $gbr['file_name'];
+			$this->Carousel->updateGambarCarousel($idgambar, $namagambar);
 
+		}
 
-        if($this->form_validation->run()==FALSE){
-           	$data['vcontent']='admin/v_tambah_item';
-    		$this->load->view('admin/v_template', $data);
-        }else{
-        	$config['upload_path']          = './gambar/';
-			$config['allowed_types']        = 'gif|jpg|png';
-			$config['max_size']             = 100;
-			$config['max_width']            = 1024;
-			$config['max_height']           = 768;
-		 
-			$this->load->library('upload', $config);
-		 
-			if ( ! $this->upload->do_upload('image')){
-				$error = array('error' => $this->upload->display_errors());
-				// $this->load->view('v_upload', $error);
-				echo $error['error'];
-				die();
-			}else{
-				$gbr = $this->upload->data();
-				$namagambar = $gbr['file_name'];
-				$this->Barang->simpanDataBarang($namabarang, $hargabarang, $beratbarang, $kategori, $deskripsi, $namagambar);
+		redirect('admin/c_addcarousel/index');
 
-			}
-    
-	    	redirect('admin/c_item/tampilkanDaftarBarang');
-        }
 
 		
 	}

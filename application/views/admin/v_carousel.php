@@ -23,9 +23,7 @@
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <div class="pull-left">Carousels</div>
-                    <div class="widget-icons pull-right">
-                    <a href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/editCarousel" class="wclose">Edit Carousel</a>
-                  </div>  
+                   
                   <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">
@@ -47,21 +45,21 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
+                              <td><img src="<?php echo base_url(); ?>\assets\admin\img\carousel\<?php echo $listGambar[0]['NAMAGAMBAR']; ?>" alt="" style="width: 250px; height: 250px"></td>
+                              <td><img src="<?php echo base_url(); ?>\assets\admin\img\carousel\<?php echo $listGambar[1]['NAMAGAMBAR']; ?>" alt="" style="width: 250px; height: 250px"></td>
+                              <td><img src="<?php echo base_url(); ?>\assets\admin\img\carousel\<?php echo $listGambar[2]['NAMAGAMBAR']; ?>" alt="" style="width: 250px; height: 250px"></td>
+                              <td><img src="<?php echo base_url(); ?>\assets\admin\img\carousel\<?php echo $listGambar[3]['NAMAGAMBAR']; ?>" alt="" style="width: 250px; height: 250px"></td>
                             </tr>
                             
                             <tr>
 
-                            <td><a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/hapusCarousel/1/<?php echo 'nama gambar' ?>">Hapus</a></td>
+                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/editCarousel/1">Edit</a></td>
                               
-                            <td><a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/hapusCarousel/2/<?php echo 'nama gambar' ?>">Hapus</a></td>
+                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/editCarousel/2">Edit</a></td>
                             
-                            <td><a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/hapusCarousel/3/<?php echo 'nama gambar' ?>">Hapus</a></td>
+                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/editCarousel/3">Edit</a></td>
 
-                            <td><a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/hapusCarousel/4/<?php echo 'nama gambar' ?>">Hapus</a></td>
+                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_addcarousel/editCarousel/4">Edit</a></td>
 
                             </tr>
                           </tbody>

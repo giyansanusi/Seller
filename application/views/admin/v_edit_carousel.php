@@ -32,41 +32,28 @@
                   
                     <div class="container">
 
-                        <h2>Daftar Gambar Carousel</h2>
-                         <form class="form-horizontal" method="post" action="<?php echo base_url()?>index.php/admin/C_addcarousel/submitItem" enctype="multipart/form-data">
+                        <h2>Upload gambar carousel</h2>
+                         <form class="form-horizontal" method="post" action="<?php echo base_url()?>index.php/admin/C_addcarousel/submitItem/<?php echo $idgambar;?>/<?php  echo $namagambarold; ?>" enctype="multipart/form-data">
 
                         <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th>IMAGE 1</th>
-                              <th>IMAGE 2</th>
-                              <th>IMAGE 3</th>
-                              <th>IMAGE 4</th>
+                              <th>IMAGE <?php echo $idgambar; ?></th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                              <td><img src="" alt="" style="width: 250px; height: 250px"></td>
-                            </tr>
+                          
 
                             <tr>
-                              <td><input type='file' name='image1' size='20' /></td>
-                              
-
-                              <td><input type='file' name='image2' size='20' /></td>
-                              
-
-                              <td><input type='file' name='image3' size='20' /></td>
-                            
-
-                              <td><input type='file' name='image4' size='20' /></td>
+                              <!-- Tags -->
+                               
+                                <td><input type='file' name='image' size='20'/></td>
+                                <td><input type="hidden" name='image2' value=""></td>
+                                  
                             </tr>
 
                             <tr>      
-                              <button type="submit" class="btn btn-primary" name="btnPublish" value="1" style="float: right">Submit</button>
+                              <td><button type="submit" class="btn btn-primary" name="btnPublish" value="1" style="display: inline-block;">Submit</button></td>
                             </tr>
                   
                           </tbody>
