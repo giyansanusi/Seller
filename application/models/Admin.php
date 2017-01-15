@@ -38,4 +38,10 @@ class Admin extends CI_Model {
         $this->db->insert('log',$hasilSimpan);
         
     }
+
+    public function getProfileInfo($idAdmin)
+    {
+        $query=$this->db->query("SELECT * FROM admin WHERE IDADMIN = '$idAdmin'");
+        return $query->result_array();
+    }
 }

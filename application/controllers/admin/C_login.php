@@ -44,6 +44,7 @@ Class C_login extends CI_Controller {
 				$result = $this->Admin->read_user_information($username, $password);
 				if ($result != false) {
 					$session_data = array(
+						'idadmin' => $result[0]['IDADMIN'],
 						'username' => $result[0]['USERNAME'],
 						'nama' => $result[0]['NAMAADMIN'],
 						'status' => 'login',
