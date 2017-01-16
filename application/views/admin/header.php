@@ -213,7 +213,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="<?php echo base_url(); ?>/assets/admin/img/admin/<?php echo $this->session->userdata('gambar'); ?>">
+                                <img alt="" src="<?php echo base_url(); ?>/assets/admin/img/admin/<?php echo $this->session->userdata('gambar'); ?>" style="width: 38px;height: 38px;">
                             </span>
                             <span class="username"><?php echo $this->session->userdata('nama'); ?></span>
                             <b class="caret"></b>

@@ -44,4 +44,10 @@ class Admin extends CI_Model {
         $query=$this->db->query("SELECT * FROM admin WHERE IDADMIN = '$idAdmin'");
         return $query->result_array();
     }
+
+     //Update Article
+    public function updateProfile($id, $username, $namaadmin, $gambar){
+         $this->db->query("UPDATE admin SET USERNAME = '$username', NAMAADMIN = '$namaadmin',GAMBAR = '$gambar' WHERE IDADMIN = '$id'");
+    }
+
 }
