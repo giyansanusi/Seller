@@ -50,4 +50,9 @@ class Admin extends CI_Model {
          $this->db->query("UPDATE admin SET USERNAME = '$username', NAMAADMIN = '$namaadmin',GAMBAR = '$gambar' WHERE IDADMIN = '$id'");
     }
 
+    //Update Article
+    public function updatePassword($id, $password){
+         $this->db->query("UPDATE admin SET PASSWORD = '$password' WHERE IDADMIN = '$id'");
+    }
+
 }

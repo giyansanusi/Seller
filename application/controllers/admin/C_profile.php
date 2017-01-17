@@ -28,7 +28,6 @@ class C_profile extends CI_Controller {
 
 	public function editAdmin()
 	{
-
 		$data['IDADMIN'] = $this->session->userdata('idadmin');
 		$data['NAMAADMIN'] = $this->session->userdata('nama');
 		$data['USERNAME'] = $this->session->userdata('username');
@@ -38,17 +37,22 @@ class C_profile extends CI_Controller {
 		$this->load->view('admin/v_template',$data);
 	}
 
-	public function changePassword()
+	public function editPassword()
 	{
-		# code...
-		# TODO coy ...
+		$data['IDADMIN'] = $this->session->userdata('idadmin');
+		$data['NAMAADMIN'] = $this->session->userdata('nama');
+		$data['USERNAME'] = $this->session->userdata('username');
+		$data['GAMBAR'] = $this->session->userdata('gambar');
+		$data['PASSWORD'] = $this->session->userdata('password');
+
+		$data['vcontent'] = 'admin/v_edit_password';
+		$this->load->view('admin/v_template',$data);
 	}
 
 	public function submit()
 	{
 
 		//TODO : Handle apabila gambar tidak di update(di kosongkan) pada saat update
-		
 		$this->form_validation->set_rules('username','Username','required');
         $this->form_validation->set_rules('namaadmin','Nama','required');
 
@@ -102,9 +106,18 @@ class C_profile extends CI_Controller {
 
 			redirect('admin/c_profile/index');
         }
-
 		
 	}
+
+	public function submitEditPassword()
+    {
+    	$id = $this->input->post('idadmin');
+    	$password = $this->input->post('newpassword');
+    	$this->Admin->updatePassword($id, $password);
+    	//update password pada session juga
+    	$this->session->set_userdata('password', $password);
+    	redirect('admin/c_profile/index');
+    }
 
 }
 

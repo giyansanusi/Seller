@@ -49,7 +49,8 @@ Class C_login extends CI_Controller {
 						'username' => $result[0]['USERNAME'],
 						'nama' => $result[0]['NAMAADMIN'],
 						'status' => 'login',
-						'gambar' => $result[0]['GAMBAR']
+						'gambar' => $result[0]['GAMBAR'],
+						'password' => $result[0]['PASSWORD']
 					);
 					// Add user data in session
 					$this->session->set_userdata($session_data);

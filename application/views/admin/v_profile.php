@@ -51,7 +51,7 @@
                             
                             <tr>
 
-                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_profile/editadmin">Edit</a><?php echo "&nbsp;&nbsp;"; ?><a class="btn btn-default" href="<?php echo base_url(); ?>index.php/admin/c_profile/changepassword/<?php echo $IDADMIN; ?>">Change Password</a></td>
+                            <td><a class="btn btn-primary" href="<?php echo base_url(); ?>index.php/admin/c_profile/editadmin">Edit</a><?php echo "&nbsp;&nbsp;"; ?><a class="btn btn-default" href="<?php echo base_url(); ?>index.php/admin/c_profile/editpassword/">Change Password</a></td>
 
                             
 
