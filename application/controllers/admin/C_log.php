@@ -23,10 +23,15 @@ Class C_log extends CI_Controller {
 			$date = date("Y-m-d");
 		}
 		$data['vcontent'] = 'admin/v_log';
-		$data['listLog'] = $this->Log->ambilDaftarLog($date);
+		$data['listLog'] = $this->Log->ambilDaftarLogById($date);
 		$this->load->view('admin/v_template',$data);
+	}
 
-
+	public function tampilkanDaftarSemuaLog()
+	{
+		$data['vcontent'] = 'admin/v_log';
+		$data['listLog'] = $this->Log->ambilDaftarLog();
+		$this->load->view('admin/v_template',$data);
 	}
 }
 

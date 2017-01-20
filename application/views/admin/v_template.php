@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/admin/img/favicon.png">
 
     <title>Creative - Bootstrap Admin Template</title>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->    
     <link href="<?php echo base_url(); ?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->

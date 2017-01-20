@@ -98,8 +98,10 @@
                         </ul>
                     </li>
                     <!-- task notificatoin end -->
+
+
                     <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown">
+<!--                     <li id="mail_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-envelope-l"></i>
                             <span class="badge bg-important">5</span>
@@ -161,8 +163,10 @@
                                 <a href="#">See all messages</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- inbox notificatoin end -->
+                    
+
                     <!-- alert notification start-->
                     <li id="alert_notificatoin_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">

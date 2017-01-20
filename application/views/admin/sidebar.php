@@ -1,4 +1,4 @@
-<!--sidebar start-->
+sidebar start-->
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -39,16 +39,17 @@
                           <span>Activity Log</span>
                       </a>
                   </li>
-                  <li>                     
+                  
+                  <!-- <li>                     
                       <a class="" href="chart-chartjs.html">
                           <i class="icon_piechart"></i>
                           <span>Charts</span>
                           
                       </a>
                                          
-                  </li>
+                  </li> -->
                              
-                  <li class="sub-menu">
+                  <!-- <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_table"></i>
                           <span>Tables</span>
@@ -57,9 +58,9 @@
                       <ul class="sub">
                           <li><a class="" href="basic_table.html">Basic Table</a></li>
                       </ul>
-                  </li>
+                  </li> -->
                   
-                  <li class="sub-menu">
+                  <!-- <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
                           <span>Pages</span>
@@ -71,10 +72,10 @@
                           <li><a class="" href="blank.html">Blank Page</a></li>
                           <li><a class="" href="404.html">404 Error</a></li>
                       </ul>
-                  </li>
+                  </li> -->
                   
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
-      <!--sidebar end-->
+      <!--sidebar end
