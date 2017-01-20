@@ -92,6 +92,7 @@ class C_article extends CI_Controller
 	{
         $vkd = $this->uri->segment(4);
         $judul = $this->uri->segment(5);
+        $judul = str_replace("%20", " ", $judul);
 		$this->Article->hapusDataArticle($vkd, $judul);
 		redirect('admin/C_article/tampilkanDaftarArticle');
 	}

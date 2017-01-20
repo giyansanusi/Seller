@@ -65,7 +65,9 @@
                               <td><?php echo $row['DESKRIPSI']; ?></td>
                               </tr>
 
-                          <?php } ?>
+                          <?php } 
+
+                           ?>
                           </tbody>
                         </table>
                       </div>

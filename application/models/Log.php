@@ -1,4 +1,4 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Log extends CI_Model {
@@ -10,7 +10,7 @@ class Log extends CI_Model {
     }
 
     public function ambilDaftarLog(){
-        $query=$this->db->query("SELECT * FROM log ORDER BY TANGGAL ASC");
+        $query=$this->db->query("SELECT * FROM log ORDER BY TANGGAL DESC");
         return $query->result_array();
     }
 }

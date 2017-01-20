@@ -27,6 +27,7 @@ class Admin extends CI_Model {
 
     public function insertActivity($nama, $deskripsi)
     {
+        date_default_timezone_set("Asia/Jakarta");
         $date = date('Y-m-d');
         $time = date('H:s');
         $hasilSimpan=array(
